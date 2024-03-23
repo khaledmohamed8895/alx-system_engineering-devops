@@ -1,0 +1,6 @@
+#CLIENT CONFIGURATION FILE 
+Host server
+    HostName 52.3.243.157
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
