@@ -1,6 +1,8 @@
 #CLIENT CONFIGURATION FILE 
-Host server
-    HostName 52.3.243.157
-    User ubuntu
+Host *
+    HashKnownHosts yes
+    SendEnv LANG LC_*
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
