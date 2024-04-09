@@ -46,6 +46,6 @@ frontend khaledmohamed-tech-frontend-https
         default_backend khaledmohamed-tech-backend
 
 backend khaledmohamed-tech-backend
-        balance roundrobin
-        server 507818-web-01 52.3.243.157:80 check
-        server 507818-web-02 18.234.193.172:80 check
+    balance roundrobin
+    server 507818-web-01 54.197.21.214:80 check
+    server 507818-web-02 52.91.126.68:80 check
