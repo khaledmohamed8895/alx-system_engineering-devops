@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-""" function that queries the Reddit API and
-returns the number of subscribers"""
-
-import urllib.request
-import json
+"""function queries the Reddit API"""
+import requests
 
 
 def number_of_subscribers(subreddit):
-    """function that queries the Reddit API"""
-    if subreddit is None or type(subreddit) is not str:
+    """function queries the Reddit API and returns the number of subscribers"""
+
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {"User-Agent": "My Reddit API Client"}
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data["data"]["subscribers"]
+        return subscribers
+    else:
         return 0
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request) as respose:
-        html = respose.read()
-        data = json.loads(html)
-        return data.get('data').get('subscribers', 0)
