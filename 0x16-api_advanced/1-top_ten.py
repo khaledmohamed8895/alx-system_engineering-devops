@@ -7,7 +7,7 @@ def top_ten(subreddit):
     """function that queries the Reddit API"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     # Provide a descriptive User-Agent header
-    headers = {"User-Agent": "My Reddit API Client"}
+    headers = {"User-Agent": "Google Chrome"}
 
     response = requests.get(url, headers=headers, allow_redirects=False)
 
